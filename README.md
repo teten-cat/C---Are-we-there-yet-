@@ -1,4 +1,4 @@
-# C---Are-we-there-yet-
+# C- Are-we-there-yet-
 ASCII loop animation of view from the side window of a car  
 
 <img src="./demo.gif" width="400"/>  
