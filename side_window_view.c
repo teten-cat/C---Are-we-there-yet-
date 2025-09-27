@@ -252,7 +252,9 @@ int main() {
     // I do not like this part
     int BigTreePos[] = {1,12,20,25};
     int SmallTreePos[] = {6,15,24};
-    int n = 0;
+    int n = 1;
+    char *msgs[] = {"Are we there yet?", "not yet"};
+    int m = 0;
     while(1){
 
 
@@ -289,13 +291,16 @@ int main() {
             Set_Coord_char(output, 2, 10, rand_chance_char(' ',rand_chance_char('.','+',10),10));
             Set_Coord_char(output, 3, 9, rand_chance_char(' ',rand_chance_char('.','+',10),10));
         }
+        if(n % 60 == 0){
+            m ^= 1;     // switches through 1 and 0 with XOR
+        }
         n++;
         
         //h-1, 2nd line from bottom, from 5 is going forward, w-2 if backward
         Set_Coord_char(output,h-1,5,rand_chance_char('-','.',40));
         usleep(ANIMATION_COOLDOWN);
         printf("%s\n\n",output);
-        printf("Are we there yet?");
+        printf("   %s\n",msgs[m]);
         printf("\033[1J\033[H"); // clears screen
     }
 }
